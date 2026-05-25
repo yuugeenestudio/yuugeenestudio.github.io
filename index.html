@@ -303,12 +303,30 @@
     <h2>Let's make you the agent buyers <em>trust.</em></h2>
     <div class="contacts">
       <a class="solid" href="https://wa.me/233559466873?text=Hi%20Eugene%2C%20I%20saw%20your%20website%20packages%20and%20I%27d%20like%20to%20get%20started." target="_blank" rel="noopener">WhatsApp · +233 55 946 6873</a>
-      <a>WeChat · McEugene1</a>
+      <a href="tel:+8617638131363">Call · +86 176 3813 1363</a>
+      <a id="wechatBtn" style="cursor:pointer">WeChat · McEugene1</a>
       <a href="mailto:mceugene@163.com">mceugene@163.com</a>
     </div>
     <p class="fineprint">Prices in USD. Domain &amp; hosting fees billed separately at cost where applicable. Custom requirements quoted on request.</p>
   </div>
 
 </div>
+<script>
+  (function(){
+    var wb = document.getElementById('wechatBtn');
+    if(!wb) return;
+    var id = 'McEugene1', original = wb.textContent, busy = false;
+    wb.addEventListener('click', function(){
+      if(busy) return; busy = true;
+      function done(){
+        wb.textContent = 'Copied! Add ' + id + ' on WeChat';
+        setTimeout(function(){ wb.textContent = original; busy = false; }, 2200);
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(id).then(done).catch(done);
+      } else { done(); }
+    });
+  })();
+</script>
 </body>
 </html>
